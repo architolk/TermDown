@@ -1,0 +1,18 @@
+prefixes:
+  skos: http://www.w3.org/2004/02/skos/core#
+mappings:
+  "term": 
+    uri: skos:prefLabel
+    type: literal
+  "synoniem":
+    uri: skos:altLabel
+    type: literal
+  "gerelateerd":
+    uri: skos:related
+    type: resource
+  "definitie":
+    uri: skos:definition
+    type: literal
+  "toelichting":
+    uri: skos:scopeNote
+    type: literal

@@ -1,0 +1,18 @@
+prefixes:
+  skos: http://www.w3.org/2004/02/skos/core#
+mappings:
+  "preflabel": 
+    uri: skos:prefLabel
+    type: literal
+  "altlabel":
+    uri: skos:altLabel
+    type: literal
+  "related":
+    uri: skos:related
+    type: resource
+  "definition":
+    uri: skos:definition
+    type: literal
+  "scope note":
+    uri: skos:scopeNote
+    type: literal

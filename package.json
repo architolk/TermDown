@@ -1,0 +1,25 @@
+{
+  "name": "termdown",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Convert TermDown markdown files to SKOS Turtle",
+  "main": "process.js",
+  "scripts": {
+    "build": "node process.js"
+  },
+  "keywords": [
+    "skos",
+    "rdf",
+    "turtle",
+    "vocabulary",
+    "ontology",
+    "markdown"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "gray-matter": "^4.0.3",
+    "n3": "^1.26.0",
+    "js-yaml": "^4.1.0"
+  }
+}

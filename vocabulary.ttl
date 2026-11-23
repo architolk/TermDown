@@ -1,0 +1,13 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix ex: <https://example.org/concept/>.
+
+ex:fiets a skos:Concept;
+    skos:prefLabel "fiets";
+    skos:altLabel "rijwiel", "bike";
+    skos:related ex:voertuig;
+    skos:definition "Een fiets is een voertuig met twee wielen en een stuur";
+    skos:scopeNote "Ook elektrische fietsen kunnen vallen onder deze definitie van een fiets. Er zijn echter ook voertuigen die niet als fiets worden aangemerkt, zoals bijvoorbeeld een speed pedelec.".
+ex:voertuig a skos:Concept;
+    skos:prefLabel "voertuig";
+    skos:definition "Een voertuig is een middel waarmee iets of iemand vervoerd kan worden van de ene plek naar een andere plek.".
