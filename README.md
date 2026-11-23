@@ -7,7 +7,7 @@ Maintaining definition lists, taxonomies, thesauri is hard work. Specific tools 
 
 People have used specific excel templates to create SKOS vocabularies. But that means using a proprietry format. And excel isn't very useful when you want to use a version control mechanism like git.
 
-That's why we invented TermDown. TermDown is a vocabulary-flavoured markdown that can be used to describe concepts. It can directly be used with git version control and as such you can use any tool that you are familiar with for cooperation, managing changes, etc, etc.
+That's why we propose TermDown. TermDown is a vocabulary-flavoured markdown that can be used to describe concepts. It can directly be used with git version control and as such you can use any tool that you are familiar with for cooperation, managing changes, etc, etc.
 
 TermDown is fully compatible with SKOS, but you might also use TermDown in other situations or extend TermDown to add your own specific properties.
 
@@ -51,10 +51,10 @@ Using front-matter, you may describe individual elements, but still use the orig
 ```
 ---
 term:
-- nl: fiets
-- en: bicycle
+  nl: fiets
+  en: bicycle
 related:
-- voertuig
+  - voertuig
 ---
 # Fiets
 
@@ -75,12 +75,13 @@ The front-end matter is reserved for simple fields, the markdown is reserved for
 ---
 id:
 term:
-- nl: fiets
-- en: bicycle
+  nl: fiets
+  en: bicycle
 alternative term:
-- rijwiel
+  - rijwiel
+  - bike
 related:
-- voertuig
+  - voertuig
 broader:
 narrower:
 ---
@@ -125,10 +126,19 @@ Een fiets is een voertuig met twee wielen en een stuur
 Might be mapped using:
 
 ```
-- prefixes:
-  skos: http://
-- mappings:
-  - voorkeursterm: skos:prefLabel
-  - alternatieve term: skos:altLabel
-  - gerelateerd: skos:related
-  - definitie: skos:definition
+prefixes:
+  skos: http://www.w3.org/2004/02/skos/core#
+mappings:
+  "voorkeursterm":
+    uri: skos:prefLabel
+    type: literal
+  "alternatieve term":
+    uri: skos:altLabel
+    type: literal
+  "gerelateerd":
+    uri: skos:related
+    type: resource
+  "definitie":
+    uri: skos:definition
+    type: literal
+```
