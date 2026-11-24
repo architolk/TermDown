@@ -264,11 +264,12 @@ for (const filename of fs.readdirSync(CONCEPT_DIR)) {
   const meta = parsed.data;
   const body = parsed.content.trim();
 
-  if (!meta.id) {
-    throw new Error(`${filename}: missing id`);
+  var conceptid = meta.id;
+  if (!conceptid) {
+    conceptid = path.parse(filename).name;
   }
 
-  const concept = conceptUri(meta.id);
+  const concept = conceptUri(conceptid);
 
   //
   // rdf:type skos:Concept

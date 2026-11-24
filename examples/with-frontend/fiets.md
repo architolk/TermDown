@@ -1,5 +1,4 @@
 ---
-id: fiets
 term: fiets
 synoniem:
   - rijwiel

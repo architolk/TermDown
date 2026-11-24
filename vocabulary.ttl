@@ -3,11 +3,11 @@
 @prefix ex: <https://example.org/concept/>.
 
 ex:fiets a skos:Concept;
-    skos:prefLabel "fiets";
-    skos:altLabel "rijwiel", "bike";
+    skos:prefLabel "fiets"@nl;
+    skos:altLabel "rijwiel"@nl, "bike"@nl;
     skos:related ex:voertuig;
-    skos:definition "Een fiets is een voertuig met twee wielen en een stuur";
-    skos:scopeNote "Ook elektrische fietsen kunnen vallen onder deze definitie van een fiets. Er zijn echter ook voertuigen die niet als fiets worden aangemerkt, zoals bijvoorbeeld een speed pedelec.".
+    skos:definition "Een fiets is een voertuig met twee wielen en een stuur"@nl;
+    skos:scopeNote "Ook elektrische fietsen kunnen vallen onder deze definitie van een fiets. Er zijn echter ook voertuigen die niet als fiets worden aangemerkt, zoals bijvoorbeeld een speed pedelec."@nl.
 ex:voertuig a skos:Concept;
-    skos:prefLabel "voertuig";
-    skos:definition "Een voertuig is een middel waarmee iets of iemand vervoerd kan worden van de ene plek naar een andere plek.".
+    skos:prefLabel "voertuig"@nl;
+    skos:definition "Een voertuig is een middel waarmee iets of iemand vervoerd kan worden van de ene plek naar een andere plek."@nl.
