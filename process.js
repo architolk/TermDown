@@ -11,6 +11,7 @@ const SKOS = "http://www.w3.org/2004/02/skos/core#";
 const RDF = "http://www.w3.org/1999/02/22-rdf-syntax-ns#";
 
 const CONCEPT_DIR = process.argv[2];
+var MAPPING_FILE = process.argv[3];
 
 if (!CONCEPT_DIR) {
   console.error(
@@ -19,8 +20,12 @@ if (!CONCEPT_DIR) {
   process.exit(1);
 }
 
+if (!MAPPING_FILE) {
+  MAPPING_FILE = "mapping.yaml";
+}
+
 const CONFIG = yaml.load(
-  fs.readFileSync("mapping-nl.yaml", "utf8")
+  fs.readFileSync(MAPPING_FILE, "utf8")
 );
 
 const writer = new Writer({
@@ -65,7 +70,7 @@ function addLiteralProperty(subject, predicate, values) {
     writer.addQuad(
       subject,
       predicate,
-      literal(values)
+      literal(values, CONFIG.default_language)
     );
 
     return;
@@ -83,7 +88,7 @@ function addLiteralProperty(subject, predicate, values) {
       writer.addQuad(
         subject,
         predicate,
-        literal(value)
+        literal(value, CONFIG.default_language)
       );
     }
 
@@ -176,6 +181,9 @@ function parseBody(body) {
     }
 
     if (current) {
+      if (!current.language) {
+        current.language = CONFIG.default_language;
+      }
       current.content.push(line);
     }
   }
@@ -202,7 +210,7 @@ function parseBody(body) {
     return [
       {
         property: "skos:definition",
-        language: null,
+        language: CONFIG.default_language,
         content
       }
     ];

@@ -77,7 +77,7 @@ id:
 term:
   nl: fiets
   en: bicycle
-alternative term:
+alternatieve term:
   - rijwiel
   - bike
 related:
